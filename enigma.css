@@ -1,0 +1,68 @@
+/*
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Made by Yann Morin Charbonneau - Github : @yannmc
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+*/
+
+table td {
+  min-width: 30px;
+  max-width: 30px;
+  font-size: 17px;
+}
+
+#key1{
+  min-width: 150px;
+  max-width: 150px;
+  background-color: #99e699;
+}
+
+#key2{
+  min-width: 150px;
+  max-width: 150px;
+  background-color: #99e699;
+}
+
+#key3{
+  min-width: 150px;
+  max-width: 150px;
+  background-color: #99e699;
+}
+
+#title{
+  font-size: 25px;
+  color: white;
+  font-family: impact;
+}
+
+input[type='text']{
+  font-size: 14px;
+  font-family: monospace;
+}
+
+#rotor1Moving{
+  background-image: url('leftFirst.png');
+  background-size: 930px 20px;
+}
+#rotor2Moving{
+  background-image: url('rightFirst.png');
+  background-size: 930px 20px;
+}
+#rotor3Moving{
+  background-image: url('leftFirst.png');
+  background-size: 930px 20px;
+}
+
+body{
+  background-color: #333333;
+}
+
+#tableTitle{
+  color: white;
+  font-size: 20px;
+}
+
+#crypted{
+  color: white;
+  font-size: 40px;
+  font-family: impact;
+}

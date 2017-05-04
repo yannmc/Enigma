@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<!--
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Made by Yann Morin Charbonneau - Github : @yannmc
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-->
+<meta charset="UTF8">
+
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="enigma.css">
+  <script src="enigma.js"></script>
+</head>
+<body onload="createVariables()">
+  <div id="tableTitle" align="center">Réflecteur</div>
+  <table id="showReflecteur" border="1" align="center">
+    <tr align="center">
+      <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+    </tr>
+  </table>
+  <br>
+  <div id="tableTitle" align="center">Rotor 3</div>
+  <table id="showRotor3" border="1" align="center">
+    <tr align="center">
+      <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+    </tr>
+    <tr align="center">
+      <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+    </tr>
+    <tr align="center">
+      <td height="18px" colspan="26" id="rotor3Moving"></td>
+    </tr>
+  </table>
+  <br>
+  <div id="tableTitle" align="center">Rotor 2</div>
+  <table id="showRotor2" border="1" align="center">
+    <tr align="center">
+      <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+    </tr>
+    <tr align="center" align="center">
+      <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+    </tr>
+    <tr align="center">
+      <td height="18px" colspan="26" id="rotor2Moving"></td>
+    </tr>
+  </table>
+  <br>
+  <div id="tableTitle" align="center">Rotor 1</div>
+  <table id="showRotor1" border="1" align="center">
+    <tr align="center">
+      <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+    </tr>
+    <tr align="center" align="center">
+      <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+    </tr>
+    <tr align="center">
+      <td height="18px" colspan="26" id="rotor1Moving"></td>
+    </tr>
+  </table>
+  <br>
+  <div id="tableTitle" align="center">Alphabet</div>
+  <table id="showAlphabet" border="1" align="center">
+    <tr align="center">
+      <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+    </tr>
+    <tr align="center">
+      <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+    </tr>
+  </table>
+  <br>
+  <div align="center" id="tableTitle">Key</div>
+  <table border="1" align="center">
+    <tr>
+      <td id="key3" align="center">
+        <div>Rotor3</div>
+        <div><input class="input" type="text" size="9" id="keyRotor3" placeholder="(R3,G,+7)" value="(R3,G,+0)" oninput="getKey()"/></div>
+      </td>
+      <td id="key2" align="center">
+        <div>Rotor2</div>
+        <div><input class="input" type="text" size="9" id="keyRotor2" placeholder="(R2,D,+5)" value="(R2,D,+0)" oninput="getKey()"/></div>
+      </td>
+      <td id="key1" align="center">
+        <div>Rotor1</div>
+        <div><input class="input" type="text" size="9" id="keyRotor1" placeholder="(R1,D,-6)" value="(R1,G,+0)" oninput="getKey()"/></div>
+      </td>
+    </tr>
+  </table>
+  <div align="center"><button type="button" id="submitButton" onclick="createVariables(),refreshButton()">Submit Encoding Key</button><button type="button" id="buttonReset" onclick="reloadPage()" disabled>Reset</button></div>
+  <br>
+  <div align="center"><input class="input" type="text" size="29" id="letter" placeholder="Confirmez la clé d'encryption" oninput="createVariables()" disabled/></div>
+  <div align="center" id="crypted"></div>
+</body>
+</html>
